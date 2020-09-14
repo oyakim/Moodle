@@ -74,8 +74,9 @@ check_fileServerType_param $fileServerType
   
   # install the base stack
   # passing php versions $phpVersion
-  sudo apt-get -y install varnish php$phpVersion php$phpVersion-ldap php$phpVersion-language-pack-tr php$phpVersion-language-pack-en php$phpVersion-cli php$phpVersion-curl php$phpVersion-zip php-pear php$phpVersion-mbstring php$phpVersion-dev mcrypt
-
+  sudo apt-get -y install varnish php$phpVersion php$phpVersion-ldap  php$phpVersion-cli php$phpVersion-curl php$phpVersion-zip php-pear php$phpVersion-mbstring php$phpVersion-dev mcrypt
+  sudo apt-get install language-pack-tr
+  sudo apt-get install language-pack-en
   # if webservertype is nginx then apache2 will be masked.
   service=apache2
   if [ "$webServerType" = "nginx" ]; then
